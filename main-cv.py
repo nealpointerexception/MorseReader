@@ -1,8 +1,15 @@
 import numpy as np
 import cv2
-
+from stopwatch import stopwatch
+from morse import morse
 if __name__ == '__main__':
     cap = cv2.VideoCapture(0)
+    lightTimer = stopwatch()
+    pauseTimer = stopwatch()
+
+    conv = morse()
+
+    lightArray = []
     while(1):
         ret, frame = cap.read()
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -24,9 +31,8 @@ if __name__ == '__main__':
 
         #get contours from edges
         im2, contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-
         if len(contours) > 0:
-            print("LIGHT DETECTED")
+            #print("LIGHT DETECTED")
             c = max(contours, key=cv2.contourArea)
 
             (x, y), radius = cv2.minEnclosingCircle(c)
@@ -34,11 +40,30 @@ if __name__ == '__main__':
             radius = int(radius)
 
             cv2.circle(frame, center, radius, (0, 255, 0), 2)
-
             #cv2.drawContours(frame, c, -1, (255, 0, 0), 3)
+            if pauseTimer.is_running():
+                pauseTimer.stop()
+
+            if not lightTimer.is_running():
+                lightTimer.start()
 
         else:
-            pass;
+            if lightTimer.is_running():
+                lightTimer.stop()
+                lightArray.append(lightTimer.get_elapsed())
+            else:
+                if not pauseTimer.is_running():
+                    pauseTimer.startTime()
+                else:
+                    if(pauseTimer.get_elapsed() >= 3):
+                        if(len(lightArray) > 0):
+                            # send request to morse
+                            print("MORSE-ING TIME")
+                            lightArray.clear()
+
+
+
+
 
 
 
@@ -56,5 +81,12 @@ if __name__ == '__main__':
         if k == 27:
             break
 
+
+
+    print(lightArray)
+    rounded = []
+    for t in lightArray:
+        rounded.append(round(t))
+    print(rounded)
     cv2.destroyAllWindows()
     cap.release()

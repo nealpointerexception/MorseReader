@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/morse.py" line="37" />
+    <bookmark url="file://$PROJECT_DIR$/morse.py" line="38" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c62c36d0-60d5-4228-a229-985c63179dfb" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/main-program.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-cv.py" beforeDir="false" afterPath="$PROJECT_DIR$/calibration-cv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calibration-cv.py" beforeDir="false" afterPath="$PROJECT_DIR$/calibration_cv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main-cv.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_cv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/morse.py" beforeDir="false" afterPath="$PROJECT_DIR$/morse.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,17 +23,17 @@
       <file leaf-file-name="stopwatch.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stopwatch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
+            <state relative-caret-position="462">
               <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calibration-cv.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/calibration-cv.py">
+      <file leaf-file-name="calibration_cv.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/calibration_cv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-528">
-              <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+            <state relative-caret-position="330">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -42,17 +44,29 @@
       <file leaf-file-name="morse.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/morse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+            <state relative-caret-position="280">
+              <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main-cv.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main-cv.py">
+      <file leaf-file-name="main-program.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main-program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            <state>
+              <caret lean-forward="true" />
+              <folding>
+                <element signature="e#1#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_cv.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_cv.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -79,8 +93,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/calibration-cv.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/calibration_cv.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/morse.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/main-program.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/stopwatch.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
@@ -88,8 +103,11 @@
       <list>
         <option value="$PROJECT_DIR$/stopwatch.py" />
         <option value="$PROJECT_DIR$/main-cv2.py" />
-        <option value="$PROJECT_DIR$/calibration-cv.py" />
         <option value="$PROJECT_DIR$/main-cv.py" />
+        <option value="$PROJECT_DIR$/calibration-cv.py" />
+        <option value="$PROJECT_DIR$/calibration_cv.py" />
+        <option value="$PROJECT_DIR$/main-program.py" />
+        <option value="$PROJECT_DIR$/main_cv.py" />
         <option value="$PROJECT_DIR$/morse.py" />
       </list>
     </option>
@@ -108,7 +126,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,6 +137,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -134,7 +152,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main-cv (1)">
+  <component name="RunManager" selected="Python.main-program">
     <configuration name="main-cv (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MorseReader" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,7 +165,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main-cv.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_cv.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -165,7 +183,25 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calibration-cv.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/calibration_cv.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="main-program" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MorseReader" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main-program.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,9 +229,11 @@
       <item itemvalue="Python.morse" />
       <item itemvalue="Python.main-cv" />
       <item itemvalue="Python.main-cv (1)" />
+      <item itemvalue="Python.main-program" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main-program" />
         <item itemvalue="Python.main-cv (1)" />
         <item itemvalue="Python.main-cv" />
         <item itemvalue="Python.morse" />
@@ -226,7 +264,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947917" visible="true" weight="0.34530094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32946146" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32842106" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39915523" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -243,10 +281,44 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/stopwatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calibration_cv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_cv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/morse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/stopwatch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -261,7 +333,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calibration-cv.py">
+    <entry file="file://$PROJECT_DIR$/calibration_cv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1540">
           <caret line="73" column="17" lean-forward="true" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
@@ -285,7 +357,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calibration-cv.py">
+    <entry file="file://$PROJECT_DIR$/calibration_cv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
           <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
@@ -297,35 +369,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stopwatch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="462">
           <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main-cv.py">
+    <entry file="file://$PROJECT_DIR$/main_cv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        <state relative-caret-position="104">
+          <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calibration-cv.py">
+    <entry file="file://$PROJECT_DIR$/calibration_cv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-528">
-          <caret line="27" column="40" lean-forward="true" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        <state relative-caret-position="330">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main-program.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#1#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/morse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+        <state relative-caret-position="280">
+          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
         </state>
       </provider>
     </entry>

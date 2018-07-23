@@ -1,3 +1,4 @@
+import math
 class morse():
     def __init__(self):
         self.morsechart = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..', 'g': '--.',
@@ -6,8 +7,8 @@ class morse():
                            'v': '...-', 'w': '.--', 'x': '-..-', 'y': '-.--', 'z': '--..'}
         self.ditRange = []
         self.dahRange = []
-        self.spaceRange = []
-        self.pauseRange = []
+        self.pause = 0.00
+        self.space = 0
 
         self.offset = 0.02
     def to_morse(self, string=""):
@@ -51,38 +52,43 @@ class morse():
         avgDah = round(avgDah, 2)
 
         for x in pauses:
-            avgPause += arr[x]
-        avgPause /= 5
-        avgPause /= 2
-        avgPause = round(avgPause, 2)
+            self.pause += arr[x]
+        self.pause /= 5
+        self.pause /= 2
+        self.pause = round(self.pause, 2)
 
-        avgSpace = arr[0]
+        self.space = arr[0]
         for x in arr:
-            if x > avgSpace:
-                avgSpace = x
+            if x > self.space:
+                self.space = x
 
-        self.ditRange = [avgDit-self.offset, avgDit+self.offset]
-        self.dahRange = [avgDah - self.offset, avgDah + self.offset]
-        self.spaceRange = [avgSpace - self.offset, avgSpace + self.offset]
-        self.pauseRange = [avgPause - self.offset, avgPause + self.offset]
-
-        print("dit: " + str(avgDit))
-        print("dah: " + str(avgDah))
-        print("pause: " + str(avgPause))
-        print("space: " + str(avgSpace))
+        self.ditRange = [round(avgDit-self.offset, 2), round(avgDit+self.offset, 2)]
+        self.dahRange = [round(avgDah - self.offset, 2), round(avgDah + self.offset, 2)]
 
 
-    def to_morse_string(self, timeArr):
-        maxLen = max(timeArr)
-        minLen = min(timeArr)
-        print(maxLen)
-        print(minLen)
 
 
-if __name__ == '__main__':
-    morsegods = morse()
-    hello = morsegods.to_morse("HELLO WORLD")
-    print("HELLO WORLD: " + hello)
+    def print_calib_results(self):
+        print("dit: " + str(self.ditRange))
+        print("dah: " + str(self.dahRange))
+        print("pause: " + str(self.pause))
+        print("space: " + str(self.space))
 
-    helloagain = morsegods.to_alpha(hello)
-    print(hello + ": " + helloagain)
+    def get_space(self):
+        return self.space
+    def get_pause(self):
+        return self.pause
+
+    def to_morse_string(self, arr):
+        morseString = ""
+        for x in arr:
+            if self.ditRange[0] <= x <= self.ditRange[1]:
+                morseString += "."
+            elif self.dahRange[0] <= x <= self.dahRange[1]:
+                morseString += "-"
+            else:
+                print(x)
+                raise ValueError("Input doesn't match calibration values!")
+        return morseString
+
+

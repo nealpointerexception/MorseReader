@@ -12,6 +12,8 @@ def calibrate(decoder):
 
     calibLightArray = []
 
+    bX, bY, bW, bH = 230, 360, 220+230, 360-180
+    lightFound = False;
     while True:
         ret, frame = cap.read()
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
@@ -30,9 +32,14 @@ def calibrate(decoder):
 
         #retrive edges of detection
         edges = cv2.Canny(blur, 100, 200)
+        # draw bounding box
+        cv2.rectangle(frame, (bX, bY), (bW, bH), (0, 255, 0), 2)
 
-        #get contours from edges
+
+
+        # get contours from edges
         im2, contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        # print(lightFound)
         if len(contours) > 0:
             #print("LIGHT DETECTED")
             c = max(contours, key=cv2.contourArea)
@@ -41,8 +48,19 @@ def calibrate(decoder):
             center = (int(x), int(y))
             radius = int(radius)
 
-            cv2.circle(frame, center, radius, (0, 255, 0), 2)
+            if x < bW and x > bX:
+                if y > bH and y < bY:
+                    lightFound = True
+                    cv2.circle(frame, center, radius, (255, 0, 0), 5)
+            else:
+                lightFound = False
+
+
             #cv2.drawContours(frame, c, -1, (255, 0, 0), 3)
+        else:
+            lightFound = False
+
+        if lightFound:
             if pauseTimer.is_running():
                 pauseTimer.stop()
                 calibLightArray.append(round(pauseTimer.get_elapsed(), 2))
@@ -50,7 +68,6 @@ def calibrate(decoder):
 
             if not lightTimer.is_running():
                 lightTimer.start()
-
         else:
             if lightTimer.is_running():
                 lightTimer.stop()
@@ -59,11 +76,11 @@ def calibrate(decoder):
                 if not pauseTimer.is_running():
                     pauseTimer.start()
                 else:
-                    if(pauseTimer.get_elapsed() >= 6 and len(calibLightArray) > 0):
+                    if(pauseTimer.get_elapsed() >= 4 and len(calibLightArray) > 0):
                         print("Calibration Complete")
                         #print(".(pause).(pause).(pause).(pause)+(space) -(pause)-(pause)-")
                         del(calibLightArray[0])
-                        #print(calibLightArray)
+                        print(calibLightArray)
                         decoder.calibrate(calibLightArray)
                         break
 
@@ -77,7 +94,7 @@ def calibrate(decoder):
 
         # PROGRESSION:
 
-        #cv2.imshow("edges", edges)
+        cv2.imshow("edges", edges)
         cv2.imshow('Calibrator', frame)
 
         k = cv2.waitKey(5) & 0xFF

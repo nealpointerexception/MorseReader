@@ -70,7 +70,7 @@ def morse_parser(decoder):
             else:
                 if not pauseTimer.is_running():
                     pauseTimer.start()
-                if decoder.pauseRange[0] <= pauseTimer.get_elapsed() < decoder.pauseRange[1]:
+                if decoder.get_pause_range()[0] <= pauseTimer.get_elapsed() < decoder.get_pause_range()[1]:
                         if len(lightArray) > 0:
                             # send request to morse
 
@@ -78,7 +78,7 @@ def morse_parser(decoder):
                             print(decoder.to_alpha(morse), end="", flush=True)
                             lightArray.clear()
 
-                if pauseTimer.get_elapsed() >= decoder.space:
+                if pauseTimer.get_elapsed() >= decoder.get_space():
                     if newline:
                         print("\n")
                         newline = False

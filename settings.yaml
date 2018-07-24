@@ -1,0 +1,5 @@
+calibrated: y
+dahRange: [0.35]
+ditRange: [0.09, 0.29]
+pauseRange: [0.24, 1.19]
+space: 1.19

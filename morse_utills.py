@@ -1,4 +1,5 @@
 import math, yaml
+# TODO: Add better calibration code support
 class morse():
     def __init__(self):
         self.morsechart = {'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..-.', 'g': '--.',
@@ -9,7 +10,7 @@ class morse():
         stream = open('settings.yaml', 'r')
         self.settings = yaml.load(stream)
         stream.close()
-        self.offset = 0.1
+        self.offset = 0.09
     def to_morse(self, string=""):
         morseString = ""
         for c in string.lower():
@@ -64,7 +65,7 @@ class morse():
                 self.settings['space'] = x
 
         self.settings['ditRange'] = [round(avgDit-self.offset, 2), round(avgDit+self.offset, 2)]
-        self.settings['dahRange'] = [round(avgDah - 0.08, 2)]
+        self.settings['dahRange'] = [round(avgDah - 0.07, 2)]
         self.settings['pauseRange'] = [avgPause, self.settings['space']]
     def get_pause_range(self):
         return self.settings['pauseRange']
@@ -93,8 +94,11 @@ class morse():
             elif x >= self.settings['dahRange'][0]:
                 morseString += "-"
             else:
-                print(x)
-                raise ValueError("Input doesn't match calibration values!")
+                if x < self.settings['ditRange'][0] :
+                    morseString += '.'
+                elif x > self.settings['ditRange'][1]:
+                    morseString += "-"
+
         return morseString
 
 

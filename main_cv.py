@@ -3,17 +3,15 @@ import cv2, threading
 from stopwatch import stopwatch
 
 
-def morse_parser(decoder, mode="impatient"):
+def morse_parser(decoder):
     cap = cv2.VideoCapture(0)
 
-    lightTimer = stopwatch()
-    pauseTimer = stopwatch()
+    light_timer = stopwatch()
+    pause_timer = stopwatch()
 
-
-    lightArray = []
-    letters = []
-    bX, bY, bW, bH = 230, 360, 220 + 230, 360 - 180
-    lightFound = False
+    light_array = []
+    b_x, b_y, b_w, b_h = 230, 360, 220 + 230, 360 - 180
+    light_found = False
     newline = False
 
     def run_decoder(arr=[]):
@@ -39,7 +37,7 @@ def morse_parser(decoder, mode="impatient"):
         # retrieve edges of detection
         edges = cv2.Canny(blur, 100, 200)
 
-        cv2.rectangle(frame, (bX, bY), (bW, bH), (0, 255, 0), 2)
+        cv2.rectangle(frame, (b_x, b_y), (b_w, b_h), (0, 255, 0), 2)
 
         # get contours from edges
         im2, contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -50,36 +48,36 @@ def morse_parser(decoder, mode="impatient"):
             (x, y), radius = cv2.minEnclosingCircle(c)
             center = (int(x), int(y))
             radius = int(radius)
-            if bW > x > bX:
-                if bH < y < bY:
-                    lightFound = True
+            if b_w > x > b_x:
+                if b_h < y < b_y:
+                    light_found = True
                     # cv2.drawContours(frame, c, -1, (255, 0, 0), 3)
                     cv2.circle(frame, center, radius, (255, 0, 0), 4)
             else:
-                lightFound = False
+                light_found = False
 
         else:
-            lightFound = False
+            light_found = False
 
-        if lightFound:
+        if light_found:
             newline = True
-            if pauseTimer.is_running():
-                pauseTimer.stop()
+            if pause_timer.is_running():
+                pause_timer.stop()
 
-            if not lightTimer.is_running():
-                lightTimer.start()
+            if not light_timer.is_running():
+                light_timer.start()
         else:
-            if lightTimer.is_running():
-                lightTimer.stop()
-                lightArray.append(round(lightTimer.get_elapsed(), 2))
+            if light_timer.is_running():
+                light_timer.stop()
+                light_array.append(round(light_timer.get_elapsed(), 2))
             else:
-                if not pauseTimer.is_running():
-                    pauseTimer.start()
-                if decoder.get_pause_range()[0] <= pauseTimer.get_elapsed() < decoder.get_pause_range()[1]:
-                    run_decoder(lightArray)
-                    lightArray.clear()
+                if not pause_timer.is_running():
+                    pause_timer.start()
+                if decoder.get_pause_range()[0] <= pause_timer.get_elapsed() < decoder.get_pause_range()[1]:
+                    run_decoder(light_array)
+                    light_array.clear()
 
-                if pauseTimer.get_elapsed() >= decoder.get_space():
+                if pause_timer.get_elapsed() >= decoder.get_space():
                     if newline:
                         print("\n")
                         newline = False
@@ -92,6 +90,6 @@ def morse_parser(decoder, mode="impatient"):
         if k == 27:
             break
 
-    print(lightArray)
+    print(light_array)
     cv2.destroyAllWindows()
     cap.release()

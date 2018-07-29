@@ -1,9 +1,9 @@
 
 from calibration_cv import calibrate
 from main_cv import morse_parser
-from morse_utills import morse
+from morse_utills import Morse
 if __name__ == '__main__':
-    mainDecoder = morse()
+    mainDecoder = Morse()
     print("WELCOME TO MORSE PARSER!")
     calib_mode = mainDecoder.is_calibrated() == 'n'
     while 1:

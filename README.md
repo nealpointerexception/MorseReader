@@ -9,10 +9,12 @@ and decipher it with your camera!
 ### How do I use it?
 Before you can parse morse code, you need to calibrate the program.
 To do this, run this program in calibration mode and flash ``` eeee ttt```
-so that morse-reader can tune itself to your morse-ing speed whether you
-are using and app or a real flashlight.
+so that morse-parser can tune itself to your morse-ing speed whether you
+are using and app or a real flashlight. Make sure all your light inputs are
+within the green box onscreen!
 
-After calibration, you are ready to use the program!
+
+After calibration, you are ready to use the program
 
 Remember, higher framerate webcams will result in more accuracy
   

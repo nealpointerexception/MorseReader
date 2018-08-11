@@ -93,3 +93,4 @@ def morse_parser(decoder):
     print(light_array)
     cv2.destroyAllWindows()
     cap.release()
+

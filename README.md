@@ -12,7 +12,10 @@ To do this, run this program in calibration mode and flash ``` eeee ttt```
 so that morse-reader can tune itself to your morse-ing speed whether you
 are using and app or a real flashlight.
 
-After calibration, you are ready to use the program!  
+After calibration, you are ready to use the program!
+
+Remember, higher framerate webcams will result in more accuracy
+  
 
 ## Libs:
 * open-cv for python

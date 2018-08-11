@@ -4,7 +4,7 @@ from stopwatch import stopwatch
 
 
 def calibrate(decoder):
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(2)
 
     light_timer = stopwatch()
     pause_timer = stopwatch()
